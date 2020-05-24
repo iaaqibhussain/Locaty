@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Locaty</string>
+    <string name="compass_image_content_desc">Compass image</string>
+    <string name="not_available">NA</string>
+</resources>
