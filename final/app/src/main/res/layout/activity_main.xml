@@ -35,6 +35,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity"
+    android:background="@android:color/white"
     tools:ignore="UseCompoundDrawables">
 
     <ImageView
@@ -49,6 +50,7 @@
         android:layout_height="wrap_content"
         android:textSize="50sp"
         android:textStyle="bold"
+        android:textColor="@color/textColor"
         android:text="@string/not_available" />
 
 </LinearLayout>

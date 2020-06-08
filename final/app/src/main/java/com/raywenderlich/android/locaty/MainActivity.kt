@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             val angle = intent.getDoubleExtra(LocatyService.KEY_ANGLE,0.0)
             val angleWithDirection = "$angle  $direction"
             binding.directionTextView.text = angleWithDirection
-            binding.compassImageView.rotation = -angle.toFloat()
+            binding.compassImageView.rotation = angle.toFloat() * -1
         }
     }
 }

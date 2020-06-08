@@ -100,18 +100,18 @@ class LocatyService : Service(), SensorEventListener {
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+
     }
 
     private fun updateOrientationAngles() {
         SensorManager.getRotationMatrix(rotationMatrix, null, accelerometerReading, magnetometerReading)
 
         val orientation = SensorManager.getOrientation(rotationMatrix, orientationAngles)
-
         val degrees = (Math.toDegrees(orientation.get(0).toDouble()) + 360.0) % 360.0
-        val direction = getDirection(degrees)
         val angle = round(degrees * 100) / 100
+        val direction = getDirection(degrees)
 
-        val intent = Intent();
+        val intent = Intent()
         intent.putExtra(KEY_ANGLE, angle)
         intent.putExtra(KEY_DIRECTION, direction)
         intent.action = KEY_ON_SENSOR_CHANGED_ACTION
@@ -193,7 +193,6 @@ class LocatyService : Service(), SensorEventListener {
         return direction
     }
 
-    // Listener for
     class ActionListener : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
 
