@@ -140,6 +140,8 @@ class LocatyService : Service(), SensorEventListener {
             // Configure the notification channel.
             notificationChannel.enableLights(false)
             notificationChannel.setSound(null, null)
+            notificationChannel.enableVibration(false)
+            notificationChannel.vibrationPattern = longArrayOf(0L)
             notificationChannel.setShowBadge(false)
             notificationManager.createNotificationChannel(notificationChannel)
         }
@@ -161,6 +163,8 @@ class LocatyService : Service(), SensorEventListener {
             .setContentTitle(resources.getString(R.string.app_name))
             .setContentText("You're currently facing $direction at an angle of $angle°")
             .setWhen(System.currentTimeMillis())
+            .setDefaults(0)
+            .setVibrate(longArrayOf(0L))
             .setSound(null)
             .setSmallIcon(R.mipmap.ic_launcher_round)
             .setContentIntent(contentIntent)
